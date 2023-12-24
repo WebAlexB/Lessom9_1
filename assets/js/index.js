@@ -1,15 +1,17 @@
-const numberInput = prompt('Enter an number');
-const degreeInput = prompt('Enter an degree');
+const numberInput = prompt('Enter a number');
+const degreeInput = prompt('Enter a degree');
 
 function validNumber(numberInput, degreeInput) {
-    const number = +numberInput;
-    const degree = +degreeInput;
-    if (isNaN(number) || isNaN(degree) || !Number.isInteger(number) || !Number.isInteger(degree)) {
+    if (numberInput === null || degreeInput === null || numberInput.trim() === '' || degreeInput.trim() === '') {
         alert('Invalid input. Please enter valid numbers.');
         return false;
     }
-    if (numberInput === null || degreeInput === null) {
-        alert('Okay good bye');
+
+    const number = +numberInput;
+    const degree = +degreeInput;
+
+    if (isNaN(number) || isNaN(degree)) {
+        alert('Invalid input. Please enter valid numbers.');
         return false;
     }
     return true;
@@ -26,5 +28,5 @@ function pow(num, degree) {
 }
 
 if (validNumber(numberInput, degreeInput)) {
-    alert(pow(numberInput, degreeInput));
+    alert(pow(+numberInput, +degreeInput));
 }
