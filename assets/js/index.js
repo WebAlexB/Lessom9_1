@@ -10,7 +10,7 @@ function validNumber(numberInput, degreeInput) {
     const number = +numberInput;
     const degree = +degreeInput;
 
-    if (isNaN(number) || isNaN(degree)) {
+    if (isNaN(number) || isNaN(degree) || !Number.isInteger(number) && !Number.isInteger(degree) ) {
         alert('Invalid input. Please enter valid numbers.');
         return false;
     }
